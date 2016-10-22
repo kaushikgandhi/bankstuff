@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Login Guide {{bank.name}} | HowToBankLogin.com</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Guide for {{bank.name}} login to Personal / Corporate banking, Android / iOS app usage guide, Online Banking registration help">
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="icon" href="/img/icon-lock.png" type="image/x-icon">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+	<style>
+  @media (max-width: 479px) { .adslot_i { width: 328px } }
+  @media (min-width: 480px) and (max-width: 799px) { .adslot_i { width: 728px } }
+  @media (min-width:800px) { .adslot_i { width: 728px; height: 15px; text-align: center } }
+
+  .example_responsive_2 { width: 320px; height: 15px;}
+  .example_responsive_1 { width: 320px; height: 100px; }
+  @media(min-width: 500px) { .example_responsive_2 { width: 468px; height: 15px; }
+                             .example_responsive_1 { width: 468px; height: 60px;}
+                               }
+  @media(min-width: 800px) { .example_responsive_2 { width: 728px; height: 15px; }
+                             .example_responsive_1 { width: 728px; height: 90px; }
+                            }
+	</style> 
+	<nav class="navbar navbar-default" id="nav">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/"><img src="/img/icon-lock.png" height="45" width="45"/><h2 class="heading"> &nbsp;HowToBankLogin.com</h2></a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse hidden-xs " id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#"> <i class="glyphicon glyphicon-home"></i> Home <span class="sr-only">(current)</span></a></li>
+	      </ul>
+	      
+	      <ul class="nav navbar-nav navbar-right pull-right hidden-xs">
+	        <li><a href="#">About Us</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<div class="container-fluid" id="scroll" style="min-height: 105vh;">
+		<div class="row" style="margin-left:5%; margin-right:5%;">
+			<ol class="breadcrumb">
+			  <li><a href="/">Home</a></li>
+			  <li class="active">{{bank.name}}</li>
+			   
+				<!-- Responsive Link Unit -->
+				<li><ins class="adsbygoogle adslot_i"
+				     style="display:block"
+				     data-ad-client="ca-pub-3288074979545781"
+				     data-ad-slot="6677715354"
+				     data-ad-format="link"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+				</li>
+			</ol>
+		</div>
+		<div class="row" style="margin-left:5%; margin-right:5%;">
+			<div class="col-md-3 col-sm-12 col-xs-12 text-center">
+				<div class="thumbnail">
+	        	<img class="img-responsive" src="/img/{{bank.id}}.jpg" alt="{{bank.name}} Home Page" style="min-height: 200px;">
+	        	<div class="caption">
+		        <p>{{bank.name}} Website</p>
+		       
+		      </div>
+	        </div>
+	        <div style="border: 1px solid #ddd;padding: 4px;" class="row m-t">
+		        <a href="https://play.google.com/store/search?q={{bank.name}}" class="primary-color col-md-6 col-sm-6 col-xs-6" target="blank">
+		        	<i class="glyphicon glyphicon-phone"></i><br>
+		        	Android
+		        </a>
+		        <a href="http://www.apple.com/in/search/{{bank.name.replace(' ','-')}}" class="primary-color col-md-6 col-sm-6 col-xs-6" target="blank">
+		        	<i class="glyphicon glyphicon-phone"></i><br>
+		        	iOS
+		        </a>
+	        </div>
+       
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12 ">
+        	<h1 style="font-size: 20px;" class="primary-color"><i class="glyphicon glyphicon-off"></i> How To Bank Login - {{bank.name}}, USA</h1>
+        	<p style="border: 1px solid #eee; padding: 10px;">
+        		<span style="font-size: 17px; font-weight: bold;">General Information of {{bank.name}}</span><br>
+        		The Bank was established on {{bank.est_date}} is one of the reputed banks in United States Of America with total of <red style="font-weight: bold">{{bank.total_branches}}</red> branches, And has an asset of ${{bank.ASSET}} as declared on 2015 december.<br>
+        		Bank is registered with FDIC Number {{bank.FDICDBS}} under FDIC: <red> {{bank.FDICNAME}}</red>, {{bank.FDIC_CITY}}.
+        		Headquaters of the bank is located in <red>{{bank.hcr}}</red>,
+        		{{bank.name}} follows Structure Information Management System (SIMS) for centralized management of the infromation / data and is managed by Office of controller of currency (OCC): {{bank.OCCNAME}}.
+        	</p>
+        	<p style="border: 1px solid #eee; padding: 10px;">
+        	<span style="font-size: 17px; font-weight: bold;">Login, Registration and App Usage Guide</span><br>
+        		{{bank.name}} is one of the modern banks and supports online banking facilities. If you need help to login to the bank's Personal / Corporate Banking read the <a href="#guide">Login Guide</a> below. <br><br>
+        		You can also use the apps [Click on the Android or iOS app link] for a complete guide to use the apps read our <a href="#app">app guide section.</a>
+        		If you are looking for credit card / debit card related details and login or payment options read our <a href="#cards">Card Section</a>.
+        	<br><br>
+        	If you are not registered for Online Banking of {{bank.name}} follow the <a href="#registration">Registration Guide.</a>
+        	</p>
+        </div>
+        <div class="col-md-3 hidden-xs hidden-sm ">
+			  <!-- big mid -->
+			  <ins class="adsbygoogle"
+			       style="display:inline-block;width:336px;height:580px"
+			       data-ad-client="ca-pub-3288074979545781"
+			       data-ad-slot="1369776956"></ins>
+			  <script>
+			    (adsbygoogle = window.adsbygoogle || []).push({});
+			  </script>
+			   
+				</div>
+        </div>
+        <div class="row" style="margin-left:5%; margin-right:5%;">
+        <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2">
+        	
+        	
+        	<h3 style="font-size: 18px;" class="primary-color" id="guide">
+        		<i class="glyphicon glyphicon-list"></i> Step by Step guide for Login to Personal Banking of {{bank.name}}
+        	</h3>
+        		<!-- Responsive -->
+			      <ins class="adsbygoogle example_responsive_1"
+			           style="display:block;margin-left:auto;"
+			           data-ad-client="ca-pub-3288074979545781"
+			           data-ad-slot="1900398952"
+			           ></ins>
+			      <script>
+			      (adsbygoogle = window.adsbygoogle || []).push({});
+			      </script>
+        	<p class="m-t-md">
+        	1. The bank has a secured website, visit the bank <a href="{{bank.web}}" target="blank">website here</a><br><br>
+        	2. Click on the above link you will be directed to the banks website, There you will find a <red>Login Form</red>, Top Right in the webpage.<br><br>
+        	3. Enter Your <red>UserName</red> and <red>Password</red> . If you don't have an exisiting account read our <a href="#registration">registration guidelines</a> below.<br><br>
+        	4. Once you have entered the login details you are ready to login to your bank dashboard. Press the <button class="btn btn-outline">Login</button> button in the form.<br><br>
+						<!-- big mid -->
+						<ins class="adsbygoogle"
+						     style="display:inline-block;width:336px;height:280px"
+						     data-ad-client="ca-pub-3288074979545781"
+						     data-ad-slot="1369776956"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script><br>
+        	5. If you have opted-in for two step authentication you might also be asked for a verification code. <br><br>
+
+        	6. You will receive your <red>High Security verification code</red> on your registered Mobile Number or Email Id.<br><br>
+
+        	7. Enter the code in the Text Box and volla you are now logged in to your personal banking account. <br><br>
+
+        	8. You can now do all kind of transactions and view records depending upon your access level.
+        	</p>
+        	<h3 style="font-size: 18px;" class="primary-color" id="app">
+        		<i class="glyphicon glyphicon-phone"></i> App Usage Guide for {{bank.name}}, [Android / iOS]
+        	</h3>
+        	<p>
+        	1. If you have an Android phone download the app from <a href="https://play.google.com/store/search?q={{bank.name}}" target="blank">Play Store Link</a> <br>
+        	If you have and iPhone or iOS device download it from  <a href="http://www.apple.com/in/search/{{bank.name.replace(' ','-')}}" target="blank">
+		        	iTunes Store
+		        </a><br></br>
+		      2. After completing download and installing of the app open the app.<br><br>
+
+		      3. Enter the login details <red>Username</red> & <red>Mpin</red>, you will be asked for One Time Password (OTP). <br><br>
+
+		      4. Enter the OTP you recieved in your registered Mobile number / Email Id.<br></br>
+		       <ins class="adsbygoogle example_responsive_1"
+			           style="display:block;margin-left:auto;"
+			           data-ad-client="ca-pub-3288074979545781"
+			           data-ad-slot="1900398952"
+			           ></ins>
+			      <script>
+			      (adsbygoogle = window.adsbygoogle || []).push({});
+			      </script><br>
+
+		      5. If you don't have the mobile number registered with the bank you can contact customer care number. <br><br>
+
+		      7. You might need to wait for activation of your device in the bank system.<br><br>
+
+		      6. After you have registered your device successfully you will be able to do all kind of transactions.
+        	
+		      </p>
+		      </div>
+	        </div>
+	        <div class="row" style="margin-left:5%; margin-right:5%;">
+	        <div class="col-md-7 col-sm-12 col-xs-12 col-md-offset-2">
+		      <h3 style="font-size: 18px;" class="primary-color m-t" id="registration">
+        		<i class="glyphicon glyphicon-user"></i> Online Banking Registration Guide
+        	</h3>
+        	<p>
+        	1. The registration of online banking is a manual process. If you haven't opted online banking during 
+        		the account opening you need to visit and fillup the request form available in the bank.<br>
+
+		      2. After you are registered for online banking you will get an Post Mail containing your <red>Username</red> and <red>Temporary Passowrd</red> **our suggestion is to change the passowrd immediately after you recieve the mail.<br><br>
+
+		      3. Once you have recieved the Mail from the bank use our <a href="#guide">login guide</a> to successfully login to your bank account.
+        	
+		      </p>
+		       <h3 style="font-size: 18px;" class="primary-color m-t" id="registration">
+        		<i class="glyphicon glyphicon-credit-card"></i> Cards Login {{bank.name}}
+        	</h3>
+        	<p>
+        		1. If you have an existing bank account and online banking you can link your credit card to the same account. Follow steps 2-4 or if you don't have an exisiting online banking and you want to login through your credit card read 5-7.
+        		<br><br>
+        		2. Login to the bank account on Left Nav bar click <red>Add a card</red>.<br>
+
+        		3. Just details of your visa or master card and it will be linked to your account.<br>
+
+        		4. After successfully completing 2-3 steps You can now make payments or view bills of your CC.<br><br>
+
+        		5. If you don't have an account with {{bank.name}} then you can make payments through other bank accounts by linking the card.<br>
+        		6. Or visit <a href="{{bank.web}}">Bank Home</a> then from the main menu select cards. <br>
+
+        		7. You can make the payment from your other net banking account or checkout other valid payment options like Cheque drops, DD drop etc.
+        	</p>
+        </div>
+         <div class="col-md-3 hidden-xs hidden-sm ">
+			  <!-- big mid -->
+			  <ins class="adsbygoogle"
+			       style="display:inline-block;width:336px;height:380px"
+			       data-ad-client="ca-pub-3288074979545781"
+			       data-ad-slot="1369776956"></ins>
+			  <script>
+			    (adsbygoogle = window.adsbygoogle || []).push({});
+			  </script>
+			  </div>
+		</div>
+	</div>
+
+<footer>
+<div class="row">
+	<div class="col-md-5 ">Copyrights (c) 2016 <a href="/" class="primary-color">HowToBankLogin.com </a></div>
+</div>
+</footer>
+
+<script type="text/javascript">
+
+$(document).scroll(function (event) {
+var scroll = $(window).scrollTop();
+if(scroll>=100){
+	$('#nav').addClass('scroll navbar-fixed-top');
+}else if(scroll==0){
+	$('#nav').removeClass('scroll').removeClass('navbar-fixed-top');
+}
+});
+$("#search").keyup(function(){
+	if($(this).val().length==0){
+		$("#results").hide();
+		return;
+	}else
+	if($(this).val().length<3){
+	$("#results").show();
+	$(window).scrollTop(10);
+	$('#results').html("<h3>Search Results</h3><p>Loading results, Keep typing...</p>");
+	return;
+	}
+	$('#results').html("<h3>Search Results</h3>");
+	 $("#banks a:contains('"+$(this).val()+"')").each( function( i, element ) {
+      // var content = $(element).text();
+      // content = content.replace( searchedText, '<span class="search-found">' + searchedText + '</span>' );
+      $('#results').append( (i+1)+ '.  <a href="'+$(element).attr('href')+'">'+$(element).text()+"</a> <br>" );
+ });
+});
+</script>
+<!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ecd822b4e73b320"></script> 
+ -->
+</body>
+
