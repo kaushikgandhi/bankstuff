@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>HowToBankLogin.com | Your Bank Login Guide</title>
+	<title>Login Guide For Bank Names Starting With {{code}} | HowToBankLogin.com</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="/js/min.js" async></script>
 	<link rel="icon" href="/img/icon-lock.png" type="image/x-icon">
@@ -25,62 +25,62 @@
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="#"> <i class="glyphicon glyphicon-home"></i> Home <span class="sr-only">(current)</span></a></li>
 	      </ul>
-	      
+	       <form class="navbar-form navbar-right">
+		        <div class="form-group">
+		          <div class="input-group">
+						  <input type="text" class="form-control" placeholder="Search Banks" id="search"></input>
+						  <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" style="color: #ff5252;"></i></span>
+						</div>
+		        </div>
+		      </form>
 	      <ul class="nav navbar-nav navbar-right pull-right hidden-xs">
 	        <li><a href="#">About Us</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
-	<div class="container-fluid" id="scroll" style="min-height: 105vh;">
+	<div class="container-fluid" id="scroll">
 		<div class="row">
-			<div class="col-md-9"><h1 style="font-size: 20px;" class="primary-color">How To Bank Login</h1>
-			<p>
-				This is free Website / Tool , Our professional writers have gathered information on how you can login to a banks website for personal / corporate banking, Search below your banks name or browse the list and follow the link, Read our step by step guide.
-				You have all kind of information starting from login guide to Android Apps / iOS apps etc.
-			</p>
-			</div>
-			<div class="col-md-8 m-t" style="padding: 15px; border: 1px solid #eee;">
-				<h2 style="font-size: 20px; margin-top: -5px;">
-				Search Your Bank
-				</h2>
-				<input type="text" class="form-control" placeholder="Search Banks" id="search"></input>
+			<h1 style="font-size: 20px;" class="primary-color">Check Login Guide For Bank Names Starting With {{code}}</h1>	
+		</div>
+			
+		<div class="row">
+			<div class="col-md-8 " id="results" style="border: 1px solid #eee; padding: 10px;display: none; margin-top: 30px;">
 			</div>
 		</div>
-		<div class="row" style="margin-left:5%; margin-right:5%; margin-top: 30px;">
-			<div class="col-md-8 " id="results" style="border: 1px solid #eee; padding: 10px;display: none;">
-			</div>
-		</div>
-		<div class="row" id="banks">
-		<table class="table table-bordered table-striped table-condensed cf">
+		
+		<hr>
+		<div class="row">
+		{%for key in banks_dict %}
+		<table class="table table-bordered table-striped table-condensed cf" id="{{key}}">
 		<thead>
 
-		 <tr><td>Recently Searched Guides</td></tr>
+		 <tr><td>Bank Names Starting with {{key}}</td></tr>
 
 		</thead>
 		<tbody>
-		{%for i in range(0,banks | length,4) %}
+		{%for i in range(0,banks_dict[key] | length,4) %}
 		<tr>
 		<td>
-		<a href="/{{banks[i][1].replace(' ','-')}}-online-banking-login/{{banks[i][0]}}/">{{banks[i][1]}}</a>
+		<a href="/{{banks_dict[key][i][1].replace(' ','-')}}-online-banking-login/{{banks_dict[key][i][0]}}/">{{banks_dict[key][i][1]}}</a>
 		</td>
-		{%if i+1 < banks | length %}
+		{%if i+1 < banks_dict[key] | length %}
 		<td>
-		<a href="/{{banks[i+1][1].replace(' ','-')}}-online-banking-login/{{banks[i+1][0]}}/">{{banks[i+1][1]}}</a>
-		</td>
-		{%else%}
-		<td style="min-width:25%;"></td>
-		{%endif%}
-		{%if i+2 < banks | length %}
-		<td>
-		<a href="/{{banks[i+2][1].replace(' ','-')}}-online-banking-login/{{banks[i+2][0]}}/">{{banks[i+2][1]}}</a>
+		<a href="/{{banks_dict[key][i+1][1].replace(' ','-')}}-online-banking-login/{{banks_dict[key][i+1][0]}}/">{{banks_dict[key][i+1][1]}}</a>
 		</td>
 		{%else%}
 		<td style="min-width:25%;"></td>
 		{%endif%}
-		{%if i+3 < banks | length %}
+		{%if i+2 < banks_dict[key] | length %}
 		<td>
-		<a href="/{{banks[i+3][1].replace(' ','-')}}-online-banking-login/{{banks[i+3][0]}}/">{{banks[i+3][1]}}</a>
+		<a href="/{{banks_dict[key][i+2][1].replace(' ','-')}}-online-banking-login/{{banks_dict[key][i+2][0]}}/">{{banks_dict[key][i+2][1]}}</a>
+		</td>
+		{%else%}
+		<td style="min-width:25%;"></td>
+		{%endif%}
+		{%if i+3 < banks_dict[key] | length %}
+		<td>
+		<a href="/{{banks_dict[key][i+3][1].replace(' ','-')}}-online-banking-login/{{banks_dict[key][i+3][0]}}/">{{banks_dict[key][i+3][1]}}</a>
 		</td>
 		{%else%}
 		<td style="min-width:25%;"></td>
@@ -89,14 +89,14 @@
 		{%endfor%}
 		</tbody>
 		</table>
-		</div>
+		{%endfor%}
 		<hr>
-		<div class="row">
-		<h2 style="font-size: 20px;">
+		</div>
+		<h2 style="font-size: 20px; margin-left:5%; margin-right:5%;">
 			Browse Banks Alphabetically
 		</h2>
 
-	
+	<div id="banks" class="row">
 		<a href="/1/">1</a> &nbsp;&nbsp;
 		
 		<a href="/2/">2</a> &nbsp;&nbsp;
@@ -154,6 +154,10 @@
 		<a href="/Y/">Y</a> &nbsp;&nbsp;
 		
 		<a href="/Z/">Z</a> &nbsp;&nbsp;
+
+
+		<br>
+		<br>
 		</div>
 	</div>
 	<footer>
@@ -161,9 +165,9 @@
 		<div class="col-md-5 ">Copyrights (c) 2016 <a href="/" class="primary-color">HowToBankLogin.com </a></div>
 	</div>
 </footer>
-
+{%include 'saas.html'%}
 <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ecd822b4e73b320"></script> 
  -->
-{%include 'saas.html'%}
+
 </body>
 </html>

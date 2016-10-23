@@ -13,20 +13,26 @@ if(scroll>=100){
 }
 });
 $("#search").keyup(function(){
+
 	if($(this).val().length==0){
 		$("#results").hide();
 		return;
 	}else
 	if($(this).val().length<3){
+
 	$("#results").show();
 	$(window).scrollTop(10);
 	$('#results').html("<h3>Search Results</h3><p>Loading results, Keep typing...</p>");
 	return;
 	}
 	$('#results').html("<h3>Search Results</h3>");
-	 $("#banks a:contains('"+$(this).val()+"')").each( function( i, element ) {
+	  $.get({'url':'/search/'+$(this).val()},function( data ) {
+	  	data = data.banks;
+	  	for(i=0;i<data.length;i++){
+	  		$('#results').append( (i+1)+ '.  <a href="'+data[i][0]+'">'+data[i][1]+"</a> <br>" );
+	  	}
       // var content = $(element).text();
       // content = content.replace( searchedText, '<span class="search-found">' + searchedText + '</span>' );
-      $('#results').append( (i+1)+ '.  <a href="'+$(element).attr('href')+'">'+$(element).text()+"</a> <br>" );
+      
  });
 });

@@ -41,7 +41,14 @@
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="/"> <i class="glyphicon glyphicon-home"></i> Home <span class="sr-only">(current)</span></a></li>
 	      </ul>
-	      
+	       <form class="navbar-form navbar-right">
+		        <div class="form-group">
+		          <div class="input-group">
+						  <input type="text" class="form-control" placeholder="Search Other Banks" id="search"></input>
+						  <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" style="color: #ff5252;"></i></span>
+						</div>
+		        </div>
+		      </form>
 	      <ul class="nav navbar-nav navbar-right pull-right hidden-xs">
 	        <li><a href="#">About Us</a></li>
 	      </ul>
@@ -65,6 +72,10 @@
 				</script>
 				</li>
 			</ol>
+		</div>
+		<div class="row">
+		<div class="col-md-8 " id="results" style="border: 1px solid #eee; padding: 10px;display: none; margin-top: 30px;">
+		</div>
 		</div>
 		<div class="row" >
 			<div class="col-md-3 col-sm-12 col-xs-12 text-center">
@@ -100,6 +111,7 @@
 			      (adsbygoogle = window.adsbygoogle || []).push({});
 			      </script>
         	</p>
+        	
         	<p style="border: 1px solid #eee; padding: 10px;">
         		<span style="font-size: 17px; font-weight: bold;">General Information of {{bank.name}}</span><br>
         		The Bank was established on {{bank.est_date}} is one of the reputed banks in United States Of America with total of <red style="font-weight: bold">{{bank.total_branches}}</red> branches, And has an asset of ${{bank.ASSET}} as declared on 2015 december.<br>
