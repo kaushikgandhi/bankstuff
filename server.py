@@ -53,7 +53,6 @@ _connection = SQLconnection()
 _connection.init()
 
 @app.route('/robots.txt')
-@app.route('/robots.txt/')
 def robot():
     return render_template('robots.txt')
 
@@ -193,7 +192,7 @@ def sitemap(index):
     start=start+1
   bank_names = {}
   try:
-    _connection.cursor.execute('select namefull,id from bank_branches where BRNUM=0 and website!="To Be Updated" group by namefull')
+    _connection.cursor.execute('select namefull,id from bank_branches where BRNUM=0 and website!="To Be Updated" group by NAMEFULL')
   except Exception as e:
     print e
     _connection.re_connect()
