@@ -296,7 +296,7 @@ def get_branch(id):
 def home():
   bank_names = {}
   try:
-    _connection.cursor.execute('select namefull,id from bank_branches where BRNUM=0 group by namefull')
+    _connection.cursor.execute('select namefull,id from bank_branches where BRNUM=0 and website!="To Be Updated" group by namefull')
   except Exception as e:
     print e
     _connection.re_connect()
