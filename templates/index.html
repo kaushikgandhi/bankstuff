@@ -3,8 +3,8 @@
 <head>
 	<title>HowToBankLogin.com | Search Your Bank</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="/static/main.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="/js/min.js" async></script>
+	<link rel="icon" href="/img/icon-lock.png" type="image/x-icon">
 </head>
 <body>
 	<nav class="navbar navbar-default" id="nav">
@@ -114,36 +114,8 @@
 	</div>
 </footer>
 
-<script type="text/javascript">
-
-$(document).scroll(function (event) {
-var scroll = $(window).scrollTop();
-if(scroll>=100){
-	$('#nav').addClass('scroll navbar-fixed-top');
-}else if(scroll==0){
-	$('#nav').removeClass('scroll').removeClass('navbar-fixed-top');
-}
-});
-$("#search").keyup(function(){
-	if($(this).val().length==0){
-		$("#results").hide();
-		return;
-	}else
-	if($(this).val().length<3){
-	$("#results").show();
-	$(window).scrollTop(10);
-	$('#results').html("<h3>Search Results</h3><p>Loading results, Keep typing...</p>");
-	return;
-	}
-	$('#results').html("<h3>Search Results</h3>");
-	 $("#banks a:contains('"+$(this).val()+"')").each( function( i, element ) {
-      // var content = $(element).text();
-      // content = content.replace( searchedText, '<span class="search-found">' + searchedText + '</span>' );
-      $('#results').append( (i+1)+ '.  <a href="'+$(element).attr('href')+'">'+$(element).text()+"</a> <br>" );
- });
-});
-</script>
 <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ecd822b4e73b320"></script> 
  -->
+{%include 'saas.html'%}
 </body>
-
+</html>

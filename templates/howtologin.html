@@ -4,7 +4,6 @@
 	<title>Login Guide {{bank.name}} | HowToBankLogin.com</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Guide for {{bank.name}} login to Personal / Corporate banking, Android / iOS app usage guide, Online Banking registration help">
-	<link rel="stylesheet" type="text/css" href="/static/main.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="icon" href="/img/icon-lock.png" type="image/x-icon">
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -50,7 +49,7 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 	<div class="container-fluid" id="scroll" style="min-height: 105vh;">
-		<div class="row" style="margin-left:5%; margin-right:5%;">
+		<div class="row" >
 			<ol class="breadcrumb">
 			  <li><a href="/">Home</a></li>
 			  <li class="active">{{bank.name}}</li>
@@ -67,7 +66,7 @@
 				</li>
 			</ol>
 		</div>
-		<div class="row" style="margin-left:5%; margin-right:5%;">
+		<div class="row" >
 			<div class="col-md-3 col-sm-12 col-xs-12 text-center">
 				<div class="thumbnail">
 	        	<img class="img-responsive" src="/img/{{bank.id}}.png-clipped.png" alt="{{bank.name}} Home Page" style="min-height: 200px;">
@@ -139,7 +138,7 @@
 			   
 				</div>
         </div>
-        <div class="row" style="margin-left:5%; margin-right:5%;">
+        <div class="row" >
         <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2">
         	
         	
@@ -207,7 +206,7 @@
 		      </p>
 		      </div>
 	        </div>
-	        <div class="row" style="margin-left:5%; margin-right:5%;">
+	        <div class="row" >
 	        <div class="col-md-7 col-sm-12 col-xs-12 col-md-offset-2">
 		      <h3 style="font-size: 18px;" class="primary-color m-t" id="registration">
         		<i class="glyphicon glyphicon-user"></i> Online Banking Registration Guide
@@ -258,36 +257,8 @@
 </div>
 </footer>
 
-<script type="text/javascript">
-
-$(document).scroll(function (event) {
-var scroll = $(window).scrollTop();
-if(scroll>=100){
-	$('#nav').addClass('scroll navbar-fixed-top');
-}else if(scroll==0){
-	$('#nav').removeClass('scroll').removeClass('navbar-fixed-top');
-}
-});
-$("#search").keyup(function(){
-	if($(this).val().length==0){
-		$("#results").hide();
-		return;
-	}else
-	if($(this).val().length<3){
-	$("#results").show();
-	$(window).scrollTop(10);
-	$('#results').html("<h3>Search Results</h3><p>Loading results, Keep typing...</p>");
-	return;
-	}
-	$('#results').html("<h3>Search Results</h3>");
-	 $("#banks a:contains('"+$(this).val()+"')").each( function( i, element ) {
-      // var content = $(element).text();
-      // content = content.replace( searchedText, '<span class="search-found">' + searchedText + '</span>' );
-      $('#results').append( (i+1)+ '.  <a href="'+$(element).attr('href')+'">'+$(element).text()+"</a> <br>" );
- });
-});
-</script>
 <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ecd822b4e73b320"></script> 
  -->
+ {%include 'saas.html'%}
 </body>
 
