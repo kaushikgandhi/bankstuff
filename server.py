@@ -52,9 +52,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app)
 _connection = SQLconnection()
 _connection.init()
 
-@app.route('/robots.txt')
-def robot():
-    return render_template('robots.txt')
+
 
 @app.route('/fonts/<path:path>')
 def send_fonts(path):
@@ -122,7 +120,9 @@ def with_letter(code):
 
   return render_template('with_code.html',banks_dict=bank_names,code=code)
 
-
+@app.route('/robots.txt')
+def robot():
+    return render_template('robots.txt')
 
 def home_gen():
   return render_template('index_gn.html')
