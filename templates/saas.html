@@ -267,4 +267,49 @@ thead{
 	background-color: #FFF;
 	padding: 0;
 }
+
+@media only screen and (max-width: 800px) {
+        /* Force table to not be like tables anymore */
+        #banks table,
+        #banks thead,
+        #banks tbody,
+        #banks th,
+        #banks td,
+        #banks tr {
+        display: block;
+
+        }
+         
+        /* Hide table headers (but not display: none;, for accessibility) */
+        #banks thead tr {
+        text-align: center;
+        }
+         
+       
+          
+        #banks td {
+        /* Behave like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        white-space: normal;
+        text-align:left;
+        }
+         
+        #banks td:before {
+        /* Now like a table header */
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        }
+         
+        /*
+        Label the data
+        */
+        #banks td:before { content: attr(data-title); }
+        }
 </style>

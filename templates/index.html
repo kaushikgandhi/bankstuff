@@ -55,14 +55,14 @@
 			Browse Banks Alphabetically
 		</h2>
 
-	<div style="margin-left:5%; margin-right:5%;" id="banks" class="table-responsive">
+	<div style="margin-left:5%; margin-right:5%;" id="banks">
 		{%for key in banks_dict %}
 		<a href="#{{key}}">{{key}}</a> &nbsp;&nbsp;
 		{%endfor%}
 
 		{%for key in banks_dict %}
 		<hr>
-		<table class="table table-striped table-bordered" id="{{key}}">
+		<table class="table table-bordered table-striped table-condensed cf" id="{{key}}">
 		<thead>
 
 		 <tr><td>Bank Names Starting with {{key}}</td></tr>
