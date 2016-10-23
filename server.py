@@ -53,6 +53,10 @@ _connection = SQLconnection()
 _connection.init()
 
 
+@app.route('/robots.txt')
+@app.route('/robots.txt/')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 @app.route('/fonts/<path:path>')
 def send_fonts(path):
@@ -120,9 +124,6 @@ def with_letter(code):
 
   return render_template('with_code.html',banks_dict=bank_names,code=code)
 
-@app.route('/robots.txt')
-def robot():
-    return render_template('robots.txt')
 
 def home_gen():
   return render_template('index_gn.html')
