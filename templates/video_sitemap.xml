@@ -1,0 +1,14 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"> 
+{% for page in pages %}
+	<url>
+	<loc>{{page[0]|safe}}</loc>
+	<video:video>
+	<video:thumbnail_loc>{{page[2]|safe}}</video:thumbnail_loc> 
+	   <video:title>Login Guide {{page[3]}} | HowToBankLogin.com</video:title>
+	   <video:description>Find information about online banking of {{page[3]}} </video:description>
+	   <video:content_loc>http://howtobanklogin.com/video{{page[4]}}.flv</video:content_loc>
+	 </video:video> 
+	</url>
+{% endfor %}
+</urlset>

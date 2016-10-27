@@ -219,6 +219,37 @@ def sitemap(index):
 
   return response
 
+# a route for generating sitemap.xml
+@app.route('/videos.<index>.xml', methods=['GET'])
+def video_sitemap(index):
+  """Generate sitemap.xml. Makes a list of urls and date modified."""
+  pages=[]
+  one_day_ago=(datetime.datetime.now() - datetime.timedelta(days=0)).date().isoformat()
+  start = (int(index)-1) * 1000
+  end = start + 1001
+  if start>0:
+    start=start+1
+  bank_names = {}
+  try:
+    _connection.cursor.execute('select namefull,id from bank_branches where BRNUM=0 and website!="To Be Updated" group by NAMEFULL')
+  except Exception as e:
+    print e
+    _connection.re_connect()
+    return "There was an error reconnect in sometime"
+
+  banks = [('/'+_bank[0].replace(' ','-')+"-online-banking-login/"+str(_bank[1])+'/',_bank[0],_bank[1]) for _bank in _connection.cursor.fetchall()]
+  for bank in banks[start:end]:
+    url = 'https://www.howtobanklogin.com'+bank[0]
+    pages.append(
+                  [url.replace('&',''),one_day_ago,'https://www.howtobanklogin.com/img/'+str(bank[2])+'.png-clipped.png',bank[1],bank[2]]
+                )
+  
+  sitemap_xml = render_template('video_sitemap.xml', pages=pages)
+  response= make_response(sitemap_xml)
+  response.headers["Content-Type"] = "application/xml"    
+
+  return response
+
 
 
 if __name__ == '__main__':
