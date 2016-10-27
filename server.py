@@ -179,7 +179,14 @@ def banklogin(bank_name,code):
     _connection.re_connect()
     return "There was an error reconnect in sometime"
 
-  return render_template('howtologin.html',bank=branch)
+  try:
+    _connection.cursor.execute('select namefull,id from bank_branches where BRNUM=0 and website!="To Be Updated" ORDER BY RAND() limit 12')
+  except Exception as e:
+    print e
+    _connection.re_connect()
+  other_banks = [(_bank[1],_bank[0]) for _bank in _connection.cursor.fetchall()]
+
+  return render_template('howtologin.html',bank=branch,other_banks=other_banks)
 
 # a route for generating sitemap.xml
 @app.route('/sitemap.<index>.xml', methods=['GET'])
